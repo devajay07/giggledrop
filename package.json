@@ -1,0 +1,24 @@
+{
+  "name": "giigledrop",
+  "version": "1.0.0",
+  "description": "The project is a web-based file-sharing service that allows users to upload files and receive a unique link to share with others",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devajay07/giggledrop.git"
+  },
+  "keywords": [
+    "share",
+    "file"
+  ],
+  "author": "Ajay Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devajay07/giggledrop/issues"
+  },
+  "homepage": "https://github.com/devajay07/giggledrop#readme"
+}
