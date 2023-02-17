@@ -1,11 +1,30 @@
+// Import necessary modules and files
 const express = require('express');
+const ejs = require('ejs');
+const dbConnect = require('./config/database');
+require('dotenv').config();
+const uploadFile = require('./routes/upload');
+
+// Initialize Express app
 const app = express();
 
+// Set view engine to EJS
+app.set('view engine', 'ejs');
+
+// Serve static files from public folder
+app.use(express.static('public'));
+
+// Connect to MongoDB
+dbConnect();
+
+// Route for homepage
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.render('index');
 });
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.use('/api/files', uploadFile);
+
+// Start server
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
 });
