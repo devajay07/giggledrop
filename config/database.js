@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dbConnect = ()=>{
     const url = process.env.DATABASE_URL.replace('<password>', process.env.DATABASE_PASSWORD);
     mongoose.set('strictQuery', false);
-    mongoose.connect('mongodb://localhost/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true, })
+    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, })
       .then(() => {
         console.log('Connected to MongoDB');
       })

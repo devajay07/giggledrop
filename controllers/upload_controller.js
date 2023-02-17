@@ -30,13 +30,12 @@ exports.uploadfile = (req,res,next)=>{
         }
 
         // save into database 
-            const file = new File({
+            const file = await File.create({
                 filename: req.file.filename,
                 uuid: uuid4(),
                 path: req.file.path,
                 size: req.file.size 
-            })
-        const response = await file.save();
+            });
         
         return res.status(200).send({file:`${process.env.APP_BASE_URL}/files/${file.uuid}`});
     })
