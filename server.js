@@ -4,6 +4,7 @@ const ejs = require('ejs');
 const dbConnect = require('./config/database');
 require('dotenv').config();
 const uploadFile = require('./routes/upload');
+const downloadFile = require('./routes/download');
 
 // Initialize Express app
 const app = express();
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/files', uploadFile);
+app.use('/files', downloadFile);
 
 // Start server
 app.listen(process.env.PORT, () => {
