@@ -83,8 +83,9 @@ body{
     transform: translateY(-3px);
 }
 .main-container {
-    width:fit-content;
+    width:700px;
     background-color: #C0EEF2;
+    color: rgb(70, 70, 70);
     padding: 2.5rem;
     margin-bottom: 20rem;
     border-radius: 8px;
@@ -100,4 +101,63 @@ body{
     color:white;
     font-family: 'Zeyada', cursive;
     font-size: 1.7rem;
+}
+
+.downloadLink-zone, .progress-zone{
+    display:none;
+    margin-top: 1.3rem;
+    border: 2px dashed #77778c;
+    padding:0.2rem;
+    border-radius: 8px;
+    text-align: center;
+    letter-spacing: .03rem;
+    transition: all 0.3s;
+}
+
+ .progress-bar{
+    height:100%;
+    background-color: rgb(79, 175, 173);
+    border-radius: 8px;
+    padding:0.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s;
+    width:0%;
+}
+
+.downloadLink-input{
+    background-color: rgb(79, 175, 173);
+    color:rgb(70, 70, 70);
+    border-radius: 4px;
+    padding: 0.4rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s;
+    width: 100%;
+    border:none;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.link-expiry-warning{
+    display:none;
+}
+
+.container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.downloadLink-zone{
+    flex:13;
+}
+
+.copy-icon{
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left:1rem;
+    display:none;
+    flex:1;
+    cursor:pointer;
 }
