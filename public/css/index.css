@@ -161,3 +161,15 @@ body{
     flex:1;
     cursor:pointer;
 }
+
+.qr-code{
+    text-align: center;
+}
+
+.qr-zone{
+    display:none;
+}
+
+.qr-zone h2{
+    margin-bottom: 1rem;
+}
