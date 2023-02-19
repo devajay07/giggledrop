@@ -22,7 +22,11 @@ const fileSchema = new mongoose.Schema({
   },
   reciever:{
     type: String
-  }
+  },
+  downloads:{
+    type:Number,
+    default:0
+  },
 }, {timestamps:true});
 
 const File = mongoose.model('File', fileSchema);

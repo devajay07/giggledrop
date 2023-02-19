@@ -8,9 +8,12 @@ const downloadLinkZone = document.querySelector(".downloadLink-zone");
 const downloadLinkInput = document.querySelector(".downloadLink-input");
 const linkExpiryWarning = document.querySelector(".link-expiry-warning");
 const copyIcon = document.querySelector(".copy-icon");
+const qrImage = document.querySelector(".qr-image");
+const qrZone = document.querySelector(".qr-zone");
 
 const host = "http://localhost:3000";
 const uploadUrl = `${host}/api/files/upload`
+const qrUrl = `${host}/qrCode/generate/?fileuuid=`
 let downloadUrl;
 
 fileInput.addEventListener('change', ()=>{
@@ -86,6 +89,15 @@ const uploadProgress = (e) =>{
 const showLink = (downloadLink) =>{
   downloadLinkInput.value = downloadLink.file;
   downloadUrl = downloadLink.file;
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = () =>{
+   if(xhr.readyState === XMLHttpRequest.DONE){
+    showQr(xhr.response);
+  }
+  }
+
+  xhr.open('GET', qrUrl);
+  xhr.send();
 }
 
 copyIcon.addEventListener('click', () => {
@@ -97,3 +109,15 @@ copyIcon.addEventListener('click', () => {
   },1000);
   
 });
+
+const showQr = (response) =>{
+qrZone.style.display = 'block';
+
+ // Assume response is the HTML string returned from the server
+const parser = new DOMParser();
+const doc = parser.parseFromString(response, "text/html");
+const imgElement = doc.querySelector("img");
+const imgUrl = imgElement.getAttribute("src");
+ qrImage.src = imgUrl;
+
+}

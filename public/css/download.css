@@ -113,3 +113,8 @@ body {
 .error-color{
     color:rgb(255, 111, 0);
 }
+
+a{
+    color:white;
+    text-decoration: none;
+}

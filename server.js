@@ -5,6 +5,8 @@ const dbConnect = require('./config/database');
 require('dotenv').config();
 const uploadFile = require('./routes/upload');
 const downloadFile = require('./routes/download');
+const fileDownload = require('./routes/file_download');
+const generateQr = require('./routes/qrCode');
 
 // Initialize Express app
 const app = express();
@@ -25,6 +27,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/files', uploadFile);
 app.use('/files', downloadFile);
+app.use('/files/download', fileDownload);
+app.use('/qrCode', generateQr);
+
 
 // Start server
 app.listen(process.env.PORT, () => {
