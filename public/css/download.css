@@ -23,9 +23,15 @@ body {
 }
 
 .signature {
+    margin-top: auto;
     color: white;
     font-family: 'Zeyada', cursive;
     font-size: 1.7rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .download-zone {
@@ -103,7 +109,7 @@ body {
     margin-top: 1.3rem;
     margin-bottom: 1.3rem;
     color:rgb(10, 132, 255);
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 
 .file-information span{
@@ -117,4 +123,103 @@ body {
 a{
     color:white;
     text-decoration: none;
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+
+    /* Center the drop section */
+    .drop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-zone{
+        border: 2px dashed #313143;
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+        letter-spacing: .01rem;
+        line-height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    /* Adjust brand font size */
+        .icon-container img {
+            width: 65px;
+        }
+    
+        .brand {
+            font-size: 3.5rem;
+            padding-top: 2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            color: white;
+        }
+    
+        .signature {
+            font-size: 1.5rem;
+        }
+
+    /* Reduce padding in the main container */
+    .main-container {
+        flex-direction: column;
+        width: 350px;
+        padding: 1.2rem;
+        margin-bottom: 5rem;
+        border-radius: 6px;
+        box-shadow: 4px 4px 18px 1px #1e1e1e;
+    }
+
+    /* Adjust font size of download ready text */
+    .download-ready-text {
+        font-size: 1.14rem;
+    }
+
+    /* Adjust font size of file information */
+    .file-information {
+        font-size: 0.7rem;
+    }
+
+    /* Adjust font size of download button */
+    .download-button {
+        font-size: 1rem;
+    }
+}
+
+/* Medium screens */
+@media (min-width: 577px) and (max-width: 992px) {
+
+    /* Center the drop section */
+    .drop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust brand font size */
+    .brand {
+        font-size: 2rem;
+    }
+
+    /* Adjust padding in the main container */
+    .main-container {
+        padding: 2rem;
+    }
+
+    /* Adjust font size of download ready text */
+    .download-ready-text {
+        font-size: 2rem;
+    }
+
+    /* Adjust font size of file information */
+    .file-information {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust font size of download button */
+    .download-button {
+        font-size: 1.5rem;
+    }
 }

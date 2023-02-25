@@ -20,6 +20,8 @@ body{
     margin-bottom: 3rem;
     letter-spacing: 2px;
     color: white;
+    top:0;
+    left:0;
 }
 .center{
     display: flex;
@@ -87,7 +89,7 @@ body{
     background-color: #C0EEF2;
     color: rgb(70, 70, 70);
     padding: 2.5rem;
-    margin-bottom: 20rem;
+    margin-bottom: 10rem;
     border-radius: 8px;
     box-shadow: 5px 5px 18px 2px #1e1e1e;
     height:fit-content;
@@ -98,9 +100,15 @@ body{
 }
 
 .signature{
+    margin-top: auto;
     color:white;
     font-family: 'Zeyada', cursive;
     font-size: 1.7rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .downloadLink-zone, .progress-zone{
@@ -173,3 +181,97 @@ body{
 .qr-zone h2{
     margin-bottom: 1rem;
 }
+
+/* Small screen size */
+@media only screen and (max-width: 600px) {
+
+    .main-container {
+        flex-direction: column;
+        width: 350px;
+        padding: 1.5rem;
+        margin-bottom: 5rem;
+        border-radius: 6px;
+        box-shadow: 4px 4px 18px 1px #1e1e1e;
+    }
+
+    .drop-zone {
+        border: 2px dashed #313143;
+        padding: 1rem;
+        border-radius: 6px;
+        text-align: center;
+        letter-spacing: .01rem;
+        line-height: 1.8rem;
+        font-size: 0.8rem;
+    }
+    .icon-container img {
+        width: 65px;
+    }
+
+    .brand {
+        font-size: 3.5rem;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        letter-spacing: 2px;
+        color: white;
+    }
+
+    .signature {
+        font-size: 1.5rem;
+    }
+
+    .downloadLink-zone {
+        margin-top: 1rem;
+    }
+
+    .qr-code {
+        margin-top: 1rem;
+    }
+}
+
+/* Medium screen size */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+
+    .main-container {
+        flex-direction: column;
+        width: 500px;
+        padding: 3rem;
+        margin-bottom: 5rem;
+        border-radius: 8px;
+        box-shadow: 4px 4px 18px 1px #1e1e1e;
+    }
+
+    .drop-zone {
+        border: 3px dashed #313143;
+        padding: 2rem;
+        border-radius: 6px;
+        text-align: center;
+        letter-spacing: .01rem;
+        line-height: 1.8rem;
+        font-size: 0.8rem;
+    }
+
+    .icon-container img {
+        width: 75px;
+    }
+
+    .brand {
+        font-size: 3.5rem;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        letter-spacing: 2px;
+        color: white;
+    }
+
+    .signature {
+        font-size: 1.5rem;
+    }
+
+    .downloadLink-zone {
+        margin-top: 1rem;
+    }
+
+    .qr-code {
+        margin-top: 1rem;
+    }
+}
+

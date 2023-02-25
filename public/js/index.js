@@ -1,4 +1,5 @@
 const dropZone = document.querySelector('.drop-zone');
+const signature = document.querySelector('.signature');
 const browseSpan = document.querySelector(".browse-span");
 const fileInput = document.querySelector("#file-input");
 const progressZone = document.querySelector(".progress-zone");
@@ -13,8 +14,9 @@ const qrZone = document.querySelector(".qr-zone");
 
 const host = "http://localhost:3000";
 const uploadUrl = `${host}/api/files/upload`
-const qrUrl = `${host}/qrCode/generate/?fileuuid=`
 let downloadUrl;
+
+
 
 fileInput.addEventListener('change', ()=>{
   uploadFile();
@@ -89,6 +91,9 @@ const uploadProgress = (e) =>{
 const showLink = (downloadLink) =>{
   downloadLinkInput.value = downloadLink.file;
   downloadUrl = downloadLink.file;
+
+  const qrUrl = `${host}/qrCode/generate/?link=${encodeURIComponent(downloadUrl)}`;
+
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () =>{
    if(xhr.readyState === XMLHttpRequest.DONE){
@@ -119,5 +124,6 @@ const doc = parser.parseFromString(response, "text/html");
 const imgElement = doc.querySelector("img");
 const imgUrl = imgElement.getAttribute("src");
  qrImage.src = imgUrl;
-
+ signature.style.position = 'relative';
 }
+

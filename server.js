@@ -1,6 +1,7 @@
 // Import necessary modules and files
 const express = require('express');
 const ejs = require('ejs');
+const bodyParser = require('body-parser');
 const dbConnect = require('./config/database');
 require('dotenv').config();
 const uploadFile = require('./routes/upload');
@@ -16,6 +17,7 @@ app.set('view engine', 'ejs');
 
 // Serve static files from public folder
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 dbConnect();
