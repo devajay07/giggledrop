@@ -12,8 +12,7 @@ const copyIcon = document.querySelector(".copy-icon");
 const qrImage = document.querySelector(".qr-image");
 const qrZone = document.querySelector(".qr-zone");
 
-const host = "https://excited-sock-lion.cyclic.app";
-const uploadUrl = `${host}/api/files/upload`
+const uploadUrl = `/api/files/upload`
 let downloadUrl;
 
 
@@ -92,7 +91,7 @@ const showLink = (downloadLink) =>{
   downloadLinkInput.value = downloadLink.file;
   downloadUrl = downloadLink.file;
 
-  const qrUrl = `${host}/qrCode/generate/?link=${encodeURIComponent(downloadUrl)}`;
+  const qrUrl = `/qrCode/generate/?link=${encodeURIComponent(downloadUrl)}`;
 
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () =>{
