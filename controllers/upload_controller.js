@@ -21,7 +21,7 @@ exports.uploadfile = (req,res,next)=>{
         // validate request
 
          if(!req.file){
-        return res.json({error:'No File Found'})
+        return res.json({error:'No File'})
         }
 
         if(err){

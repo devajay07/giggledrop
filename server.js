@@ -1,6 +1,7 @@
 // Import necessary modules and files
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -15,9 +16,16 @@ const app = express();
 // Set view engine to EJS
 app.set('view engine', 'ejs');
 
+const corsoptions = {
+  origin:['http://localhost:3000', 'https://excited-sock-lion.cyclic.app', 'https://excited-sock-lion.cyclic.app/api/files/upload']
+};
+
+app.use(cors(corsoptions));
+
 // Serve static files from public folder
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // Connect to MongoDB
 const dbConnect = ()=>{
