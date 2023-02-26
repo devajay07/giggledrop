@@ -1,8 +1,8 @@
 // Import necessary modules and files
 const express = require('express');
+const mongoose = require('mongoose');
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
-const dbConnect = require('./config/database');
 require('dotenv').config();
 const uploadFile = require('./routes/upload');
 const downloadFile = require('./routes/download');
@@ -20,6 +20,22 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
+const dbConnect = ()=>{
+    const url = process.env.DATABASE_URL.replace('<password>', process.env.DATABASE_PASSWORD);
+    mongoose.set('strictQuery', false);
+    mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, })
+      .then(() => {
+        console.log('Connected to MongoDB');
+        app.listen(process.env.PORT || 3000, () => {
+       console.log(`Server running on port 3000`);
+  });
+
+      })
+      .catch((error) => {
+        console.error('Error connecting to MongoDB', error);
+      });
+}
+
 dbConnect();
 
 // Route for homepage
@@ -34,6 +50,3 @@ app.use('/qrCode', generateQr);
 
 
 // Start server
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
