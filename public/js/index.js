@@ -12,7 +12,7 @@ const copyIcon = document.querySelector(".copy-icon");
 const qrImage = document.querySelector(".qr-image");
 const qrZone = document.querySelector(".qr-zone");
 
-const uploadUrl = `https://excited-sock-lion.cyclic.app/api/files/upload`
+const uploadUrl = `/api/files/upload`
 let downloadUrl;
 
 
