@@ -2,6 +2,8 @@
 
 GiggleDrop is a web-based file-sharing service that allows users to upload files and receive a unique link to share with others. The website is built using HTML, CSS, and JavaScript for the front-end, and Node.js and Express.js for the back-end.
 
+## Check it out here: https://giggledrop.onrender.com
+
 # Getting Started
 
 To get started with GiggleDrop, you can either clone the GitHub repository or download the source code as a ZIP file. Once you have the source code, follow these steps to run the project:
