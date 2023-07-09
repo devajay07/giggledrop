@@ -62,7 +62,6 @@ const uploadFile = ()=>{
   xhr.onreadystatechange = () =>{
    if(xhr.readyState === XMLHttpRequest.DONE){
     showLink(JSON.parse(xhr.response));
-    console.log(xhr.response);
   }
   }
 
@@ -91,7 +90,7 @@ const showLink = (downloadLink) =>{
   downloadLinkInput.value = downloadLink.file;
   downloadUrl = downloadLink.file;
 
-  const qrUrl = `/qrCode/generate/?link=${encodeURIComponent(downloadUrl)}`;
+  const qrUrl = `/qrCode/generate/?link=${downloadUrl}`;
 
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () =>{

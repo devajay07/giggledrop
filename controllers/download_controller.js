@@ -7,7 +7,8 @@ exports.downloadFile = async (req, res, next) =>{
          error = 'Download link has been modified or expired 🥹';
          return res.render('download', {file, error });
     }
-    const downloadLink = `${process.env.APP_BASE_URL}/files/download/${file.uuid}`;
+    const downloadLink = `http://${process.env.APP_BASE_URL}/files/download/${file.uuid}`;
+
     res.render('download', { file,error,downloadLink });
 
 }

@@ -34,9 +34,9 @@
               />
             </div>
            <% if (file) { %>
-              <button class="download-button"><a href="<%= downloadLink %>">Download File</a></button>
+              <button class="download-button"><a  target="_blank" href="<%= downloadLink %>">Download File</a></button>
            <% } else { %>
-              <button class="download-button"><a href="#">Download File</a></button>
+              <button class="download-button"><a href="#"> No Download File</a></button>
            <% } %>
 
           </div>

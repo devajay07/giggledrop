@@ -57,4 +57,3 @@ app.use('/files/download', fileDownload);
 app.use('/qrCode', generateQr);
 
 
-// Start server
